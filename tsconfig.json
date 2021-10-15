@@ -1,18 +1,38 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "@components/*": ["/src/components/*"],
+      "@config/*": ["/src/config/*"],
+      "@contexts/*": ["/src/contexts/*"],
+      "@hooks/*": ["/src/hooks/*"],
+      "@styles/*": ["/src/styles/*"],
+      "@types/*": ["/src/types/*"],
+      "@utils/*": ["/src/utils/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "sourceMap": true,
+    "types": ["react", "node"],
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

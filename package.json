@@ -6,18 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --ext 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "next lint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier 'src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.24.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.43.2"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^11.1.2",
     "@types/react": "17.0.29",
-    "eslint": "8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
     "typescript": "4.4.4"
   }
 }
