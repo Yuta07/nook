@@ -1,0 +1,44 @@
+// breakpoint
+// ex) @include max-screen($breakpoint-sm) {} or @include min-screen($breakpoint-sm) {}
+
+// inspired by tailwind.css. ref: https://tailwindcss.com/docs/breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+@mixin max-screen($break-point) {
+	@media screen and (max-width: $break-point) {
+		@content;
+	}
+}
+
+@mixin min-screen($break-point) {
+	@media screen and (min-width: $break-point) {
+		@content;
+	}
+}
+
+// txt truncate
+// ex) @include txt-truncated;
+
+@mixin txt-truncated($max-width: 85%) {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: top;
+	max-width: $max-width;
+}
+
+// position center
+// ex) @include position-center
+
+@mixin position-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}

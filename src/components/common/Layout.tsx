@@ -1,7 +1,9 @@
-export const Layout = () => {
+import { ReactNode, VFC } from 'react'
+
+export const Layout: VFC<{ children: ReactNode }> = ({ children }) => {
 	return (
-		<div>
-			<p>asdf</p>
-		</div>
+		<>
+			<main>{children}</main>
+		</>
 	)
 }
