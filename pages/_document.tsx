@@ -3,9 +3,9 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
 	render() {
 		return (
-			<Html>
-				<Head lang="ja" />
-				<body className="loading">
+			<Html lang="ja-JP">
+				<Head />
+				<body>
 					<Main />
 					<NextScript />
 				</body>

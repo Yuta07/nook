@@ -1,0 +1,16 @@
+{
+  "title": "nook base",
+  "titleTemplate": "%s - nook base",
+  "description": "nook is knowledge base for web by y_miyazaki.",
+  "openGraph": {
+    "title": "nook base",
+    "description": "nook is knowledge base for web by y_miyazaki.",
+    "type": "website",
+    "site_name": "nook base"
+  },
+  "twitter": {
+    "handle": "@yutaaaaa___",
+    "site": "@site",
+    "cardType": "summary_large_image"
+  }
+}
