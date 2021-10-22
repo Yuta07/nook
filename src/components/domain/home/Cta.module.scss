@@ -1,2 +1,60 @@
 .container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 80px 20px;
+}
+
+.logo {
+	text-align: center;
+}
+
+.inner {
+	width: 100%;
+	margin-top: 60px;
+	display: grid;
+	grid-template-columns: 360px 240px;
+	column-gap: 40px;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero {
+	font-size: 32px;
+}
+
+.description {
+	margin-top: 40px;
+}
+
+.author {
+	padding: 20px;
+	border: 1px solid var(--color-gray-darken);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profileImg {
+	margin-top: 10px;
+
+	img {
+		border-radius: 50%;
+	}
+}
+
+.authorName {
+	margin-top: 10px;
+}
+
+.links {
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.anchor {
+	&:not(&:first-of-type) {
+		margin-left: 20px;
+	}
 }
