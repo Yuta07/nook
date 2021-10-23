@@ -10,15 +10,15 @@ export const Cta = () => {
 			</div>
 			<div className={styles.inner}>
 				<div>
-					<h1 className={styles.hero}>Base for me.</h1>
+					<h1 className={styles.hero}>nook don&#39;t belong anywhere.</h1>
 					<p className={styles.description}>
-						nookはナレッジとして残したいけれど、ブログに書くのはちょっと違うなと思ったコードを蓄積していく場所です。時間をかけて少しずつコンテンツを増やしていきます。
+						nookは自分のためにナレッジとして残したいけれど、ブログに書くのはちょっと違うなと思ったコードを蓄積していく場所です。時間をかけて少しずつちょっと役に立ちそうなナレッジを増やしていきます。
 					</p>
 				</div>
 				<div className={styles.author}>
 					<h3>Author</h3>
 					<div className={styles.profileImg}>
-						<Image src="/home/profile.jpg" alt="author_image" width={120} height={120} objectFit="cover" />
+						<Image src="/home/profile.jpg" alt="author_image" width={80} height={80} objectFit="cover" />
 					</div>
 					<h2 className={styles.authorName}>y_miyazaki</h2>
 					<div className={styles.links}>

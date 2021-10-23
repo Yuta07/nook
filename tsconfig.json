@@ -10,7 +10,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"],
       "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@/supabase/*": ["src/supabase/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

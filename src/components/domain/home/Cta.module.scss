@@ -1,7 +1,5 @@
 .container {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 80px 20px;
+	width: 100%;
 }
 
 .logo {
@@ -13,7 +11,7 @@
 	margin-top: 60px;
 	display: grid;
 	grid-template-columns: 360px 240px;
-	column-gap: 40px;
+	column-gap: 80px;
 	align-items: center;
 	justify-content: center;
 }
@@ -56,5 +54,10 @@
 .anchor {
 	&:not(&:first-of-type) {
 		margin-left: 20px;
+	}
+
+	&:hover {
+		transition: 0.3s;
+		transform: translateY(-2px);
 	}
 }

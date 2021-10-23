@@ -1,2 +1,9 @@
 .container {
+	margin-top: 40px;
+	padding-top: 20px;
+	border-top: 1px solid var(--color-gray-darken);
+	display: grid;
+	grid-template-columns: 120px 120px 120px 120px 120px;
+	column-gap: 20px;
+	row-gap: 20px;
 }

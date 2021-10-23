@@ -1,21 +1,7 @@
 {
 	"plugins": ["@typescript-eslint"],
-	"extends": [
-		"next",
-		"next/core-web-vitals",
-		"plugin:@typescript-eslint/recommended",
-		"prettier",
-		"plugin:import/recommended",
-		"plugin:import/warnings"
-	],
+	"extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
 	"rules": {
-		"import/order": [
-			"error",
-			{
-				"alphabetize": {
-					"order": "asc"
-				}
-			}
-		]
+		"react-hooks/exhaustive-deps": "off"
 	}
 }
