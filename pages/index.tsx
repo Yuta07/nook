@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
 
-import { Categories, Cta } from '@components/domain/home'
+import type { NextPage } from 'next'
 
+import { Categories, Cta } from '@components/domain/home'
 import styles from 'src/styles/Home.module.scss'
 
 const HomePage: NextPage = () => {

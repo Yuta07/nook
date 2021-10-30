@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import type { CategoryState } from '@contexts/categories'
-import { supabase } from '@/supabase/supabaseClient'
-
 import styles from './Category.module.scss'
 
+import type { CategoryType } from '@/types/category'
+
+import { supabase } from '@/supabase/supabaseClient'
+
 type Props = {
-	category: CategoryState
+	category: CategoryType
 }
 
 export const Category = ({ category }: Props) => {

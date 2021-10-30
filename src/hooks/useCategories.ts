@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react'
 import { PostgrestResponse } from '@supabase/supabase-js'
+import { useEffect, useState } from 'react'
 
-import type { CategoryState } from '@contexts/categories'
 import { supabase } from '../supabase/supabaseClient'
 
+import type { CategoryType } from '@/types/category'
+
 export const useFetchCategories = () => {
-	const [categories, setCategories] = useState<CategoryState[] | null>(null)
+	const [categories, setCategories] = useState<CategoryType[] | null>(null)
 
 	useEffect(() => {
 		let didCancel = false
 
 		const requestCategories = async () => {
 			try {
-				const { data }: PostgrestResponse<CategoryState> = await supabase.from('categories').select()
+				const { data }: PostgrestResponse<CategoryType> = await supabase.from('categories').select()
 
 				if (data && !didCancel) {
 					setCategories(data)

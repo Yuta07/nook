@@ -1,15 +1,16 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { ReactElement } from 'react'
-import { NextSeo } from 'next-seo'
 import { PostgrestResponse, PostgrestSingleResponse } from '@supabase/supabase-js'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
+import { ReactElement } from 'react'
 
+import type { CategoryType } from '@/types/category'
+
+import { supabase } from '@/supabase/supabaseClient'
 import { Layout } from '@components/common/Layout'
 import { Category } from '@components/domain/category'
-import type { CategoryState } from '@contexts/categories'
-import { supabase } from '@/supabase/supabaseClient'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const { data }: PostgrestResponse<CategoryState> = await supabase.from('categories').select()
+	const { data }: PostgrestResponse<CategoryType> = await supabase.from('categories').select()
 
 	const result = data || []
 
@@ -21,32 +22,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const { data: category }: PostgrestSingleResponse<CategoryState> = await supabase
+	const { data: category }: PostgrestSingleResponse<CategoryType> = await supabase
 		.from('categories')
 		.select()
 		.eq('name', params?.category)
 		.single()
 
-	const { data }: PostgrestResponse<CategoryState> = await supabase
+	const { data: articles }: PostgrestResponse<CategoryType> = await supabase
 		.from('articles')
 		.select()
 		.contains('categories', [category?.id])
 
 	return {
 		props: {
-			articles: {
-				data,
-			},
+			articles,
+			category,
 		},
 		revalidate: 86400,
 	}
 }
 
-const CategoryPage = ({ articles }) => {
+const CategoryPage = ({ articles, category }: InferGetStaticPropsType<typeof getStaticProps>) => {
+	console.log(articles)
 	return (
 		<>
 			<NextSeo title="Home" />
-			<Category />
+			<Category category={category} />
 		</>
 	)
 }

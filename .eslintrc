@@ -2,6 +2,23 @@
 	"plugins": ["@typescript-eslint"],
 	"extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
 	"rules": {
+		"import/order": [
+			"warn",
+			{
+				"groups": ["builtin", "external", "parent", "index", "sibling", "object", "type"],
+				"pathGroups": [
+					{
+						"pattern": "@alias/**",
+						"group": "parent",
+						"position": "after"
+					}
+				],
+				"alphabetize": {
+					"order": "asc"
+				},
+				"newlines-between": "always"
+			}
+		],
 		"react-hooks/exhaustive-deps": "off"
 	}
 }

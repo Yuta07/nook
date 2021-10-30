@@ -1,22 +1,13 @@
 import { createContext, ReactNode, VFC } from 'react'
 
+import { CategoryType } from '@/types/category'
 import { useFetchCategories } from '@hooks/useCategories'
-
-export type CategoryState = {
-	id: number
-	name: string
-	description?: string
-	created_at?: string
-	updated_at?: string
-	user_id: string
-	image_url: string
-}
 
 type Props = {
 	children: ReactNode
 }
 
-export const CategoriesStateContext = createContext<{ categories: CategoryState[] | null }>({ categories: null })
+export const CategoriesStateContext = createContext<{ categories: CategoryType[] | null }>({ categories: null })
 
 export const CategoriesProviderContainer: VFC<Props> = (props) => {
 	const { categories } = useFetchCategories()
