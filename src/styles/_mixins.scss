@@ -42,3 +42,10 @@ $breakpoint-xl: 1280px;
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 }
+
+// position center
+// ex) @include neumorphism-shadow
+
+@mixin neumorphism-shadow {
+	box-shadow: 20px 20px 40px #2f2f35, -20px -20px 40px #3f3f47;
+}

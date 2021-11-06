@@ -1,0 +1,7 @@
+@import '/src/styles/mixins';
+
+.root {
+	color: var(--color-gray-lighten);
+	font-size: var(--font-size-time);
+	letter-spacing: 0.01em;
+}

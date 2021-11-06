@@ -1,0 +1,52 @@
+@import '/src/styles/mixins';
+
+.container {
+	width: 100%;
+	margin-top: 40px;
+	padding: 20px;
+	border-radius: 8px;
+	animation: fade-in 0.12s ease-in 0s 1 normal both;
+	-webkit-animation: fade-in 0.2s ease-in 0s 1 normal both;
+
+	@include neumorphism-shadow;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.posted {
+	color: var(--color-gray-lighten);
+}
+
+.anchor {
+	color: var(--color-primary);
+
+	&:hover {
+		transition: 0.3s;
+		text-decoration: underline;
+	}
+}
+
+.title {
+	margin-top: 4px;
+	font-size: var(--font-size-l);
+}

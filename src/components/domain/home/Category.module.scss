@@ -1,10 +1,13 @@
+@import '/src/styles/mixins';
+
 .container {
 	padding: 20px;
 	border-radius: 8px;
-	box-shadow: 20px 20px 40px #2f2f35, -20px -20px 40px #3f3f47;
 	color: var(--color-primary);
 	text-align: center;
 	text-decoration: none;
+
+	@include neumorphism-shadow;
 
 	&:hover {
 		transition: 0.3s;

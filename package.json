@@ -19,7 +19,9 @@
     ]
   },
   "dependencies": {
+    "@editorjs/editorjs": "^2.22.2",
     "@supabase/supabase-js": "^1.24.0",
+    "dayjs": "^1.10.7",
     "eslint-plugin-import": "^2.25.2",
     "next": "11.1.2",
     "next-seo": "^4.28.1",

@@ -1,1 +1,19 @@
 @import '/src/styles/mixins';
+
+.container {
+	margin-bottom: 40px;
+}
+
+.main {
+	display: flex;
+	align-items: center;
+}
+
+.title {
+	margin-left: 20px;
+	font-size: var(--font-size-title);
+}
+
+.description {
+	margin-top: 20px;
+}

@@ -1,7 +1,7 @@
-import { Category } from './Category'
-import { useCategoriesState } from '@contexts/categories'
-
 import styles from './Categories.module.scss'
+import { Category } from './Category'
+
+import { useCategoriesState } from '@contexts/categories'
 
 export const Categories = () => {
 	const state = useCategoriesState()
