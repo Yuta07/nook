@@ -1,14 +1,23 @@
 @import '/src/styles/mixins';
 
-.container {
+.anchor {
 	width: 100%;
 	margin-top: 40px;
 	padding: 20px;
+	display: block;
 	border-radius: 8px;
+	color: var(--color-primary);
 	animation: fade-in 0.12s ease-in 0s 1 normal both;
 	-webkit-animation: fade-in 0.2s ease-in 0s 1 normal both;
 
 	@include neumorphism-shadow;
+
+	&:hover {
+		.title {
+			transition: 0.3s;
+			text-decoration: underline;
+		}
+	}
 }
 
 @keyframes fade-in {
@@ -35,15 +44,6 @@
 
 .posted {
 	color: var(--color-gray-lighten);
-}
-
-.anchor {
-	color: var(--color-primary);
-
-	&:hover {
-		transition: 0.3s;
-		text-decoration: underline;
-	}
 }
 
 .title {
