@@ -11,15 +11,7 @@ import { Category } from '@components/domain/category'
 import { ArticleCard } from '@components/domain/category/ArticleCard'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const { data }: PostgrestResponse<CategoryType> = await supabase.from('categories').select()
-
-	const result = data || []
-
-	const paths = result.map((data) => ({
-		params: { category: data.name, id: data.id.toString() },
-	}))
-
-	return { paths, fallback: false }
+	return { paths: [], fallback: 'blocking' }
 }
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
@@ -32,6 +24,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 	const { data: articles }: PostgrestResponse<ArticleType> = await supabase
 		.from('articles')
 		.select()
+		.is('ispublished', true)
 		.contains('categories', [category?.id])
 
 	return {

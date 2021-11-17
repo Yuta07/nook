@@ -1,12 +1,18 @@
 import { PostgrestSingleResponse } from '@supabase/supabase-js'
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 import { ReactElement } from 'react'
 
 import type { ArticleType } from '@/types/category'
 
 import { supabase } from '@/supabase/supabaseClient'
 import { ArticleLayout } from '@components/common/ArticleLayout'
+
+let Editor
+if (typeof window !== 'undefined') {
+	Editor = dynamic(() => import('../../src/components/editor'), { ssr: false })
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -33,12 +39,12 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	console.log(article)
 	return (
 		<>
 			<NextSeo title="Home" />
 			<div>
 				<h1>article</h1>
+				{article ? <Editor content={article.content} /> : null}
 			</div>
 		</>
 	)
