@@ -17,8 +17,10 @@ type Props = {
 	content: OutputData | null | undefined
 }
 
-const Editor = ({ content }: Props) => {
+export default function Editor({ content }: Props) {
 	useEffect(() => {
+		if (typeof window === 'undefined') return
+
 		nookEditor = new EditorJS({
 			holder: 'editorjs',
 			readOnly: true,
@@ -81,5 +83,3 @@ const Editor = ({ content }: Props) => {
 
 	return <div className="editor-main" id="editorjs" />
 }
-
-export default Editor

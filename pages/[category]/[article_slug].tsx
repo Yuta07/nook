@@ -9,10 +9,7 @@ import type { ArticleType } from '@/types/category'
 import { supabase } from '@/supabase/supabaseClient'
 import { ArticleLayout } from '@components/common/ArticleLayout'
 
-let Editor
-if (typeof window !== 'undefined') {
-	Editor = dynamic(() => import('../../src/components/editor'), { ssr: false })
-}
+const Editor = dynamic(() => import('../../src/components/editor'), { ssr: false })
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
@@ -39,6 +36,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStaticProps>) => {
+	console.log(article)
 	return (
 		<>
 			<NextSeo title="Home" />
