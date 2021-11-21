@@ -8,6 +8,8 @@ import type { ArticleType } from '@/types/category'
 
 import { supabase } from '@/supabase/supabaseClient'
 import { ArticleLayout } from '@components/common/ArticleLayout'
+import { ArticleFooter } from '@components/domain/category/article/ArticleFooter'
+import { ArticleHeader } from '@components/domain/category/article/ArticleHeader'
 
 const Editor = dynamic(() => import('../../src/components/editor'), { ssr: false })
 
@@ -36,14 +38,16 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	console.log(article)
 	return (
 		<>
 			<NextSeo title="Home" />
-			<div>
-				<h1>article</h1>
-				{article ? <Editor content={article.content} /> : null}
-			</div>
+			{article ? (
+				<>
+					<ArticleHeader article={article} />
+					<Editor content={article.content} />
+					<ArticleFooter article={article} />
+				</>
+			) : null}
 		</>
 	)
 }
