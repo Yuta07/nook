@@ -7,10 +7,10 @@ type Props = {
 }
 
 export const ArticleHeader = ({ article }: Props) => {
-	console.log(article)
 	return (
-		<div className={styles.container}>
-			<h1 className={styles.title}>asdf</h1>
+		<div>
+			<h1 className={styles.title}>{article.title}</h1>
+			{article.word && <p className={styles.word}>{article.word}</p>}
 		</div>
 	)
 }

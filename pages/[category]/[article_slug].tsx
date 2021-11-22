@@ -8,6 +8,7 @@ import type { ArticleType } from '@/types/category'
 
 import { supabase } from '@/supabase/supabaseClient'
 import { ArticleLayout } from '@components/common/ArticleLayout'
+import { ArticleBody } from '@components/domain/category/article/ArticleBody'
 import { ArticleFooter } from '@components/domain/category/article/ArticleFooter'
 import { ArticleHeader } from '@components/domain/category/article/ArticleHeader'
 
@@ -44,7 +45,9 @@ const ArticlePage = ({ article }: InferGetStaticPropsType<typeof getStaticProps>
 			{article ? (
 				<>
 					<ArticleHeader article={article} />
-					<Editor content={article.content} />
+					<ArticleBody>
+						<Editor content={article.content} />
+					</ArticleBody>
 					<ArticleFooter article={article} />
 				</>
 			) : null}

@@ -1,7 +1,10 @@
 @import '/src/styles/mixins';
 
-.container {
+.title {
+	font-size: var(--font-size-xxl);
 }
 
-.title {
+.word {
+	margin-top: 12px;
+	font-size: var(--font-size-s);
 }
