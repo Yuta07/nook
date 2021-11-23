@@ -1,7 +1,42 @@
 @import '/src/styles/mixins';
 
 .container {
+	width: 100%;
+	margin-top: 60px;
 }
 
-.author {
+.box {
+	display: flex;
+	padding: 20px;
+	border-top: 1px solid var(--color-gray);
+
+	&:last-of-type {
+		border-bottom: 1px solid var(--color-gray);
+	}
+}
+
+.key {
+	width: 200px;
+}
+
+.tag {
+	padding: 8px;
+	border-radius: 4px;
+	background: var(--color-gray-darken);
+	color: var(--color-primary);
+	font-size: var(--font-size-s);
+
+	&:not(&:first-of-type) {
+		margin-left: 16px;
+	}
+
+	&:hover {
+		opacity: 0.7;
+		transition: 0.3s;
+	}
+}
+
+.updated {
+	color: var(--color-primary) !important;
+	font-size: var(--font-size-m) !important;
 }

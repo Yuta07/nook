@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import styles from './ArticleHeader.module.scss'
+import styles from './ArticleFooter.module.scss'
 
 import { ArticleType } from '@/types/category'
 import { Time } from '@components/ui/Time'
@@ -43,10 +43,10 @@ export const ArticleFooter = ({ article }: Props) => {
 					})}
 				</p>
 			</div>
-			<div className={styles.container}>
+			<div className={styles.box}>
 				<p className={styles.key}>Updated</p>
 				<p className={styles.value}>
-					<Time>{article.updated_at.toString().slice(0, 10)}</Time>
+					<Time className={styles.updated}>{article.updated_at.toString().slice(0, 10)}</Time>
 				</p>
 			</div>
 		</div>
